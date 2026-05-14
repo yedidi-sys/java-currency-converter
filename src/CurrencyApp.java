@@ -15,7 +15,7 @@ class CurrencyApp {
             if (to.equals("EXIT")) break;
 
             // Fix: Check if NOT supported (!)
-            if (!rateProvider.isCurrencySupported(from) || !rateProvider.isCurrencySupported(to)) {
+            if (rateProvider.isCurrencySupported(from) || rateProvider.isCurrencySupported(to)) {
                 System.out.println("One of the currencies entered is not supported. Please try again.");
                 continue;
             }
