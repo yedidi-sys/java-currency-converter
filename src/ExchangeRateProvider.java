@@ -7,7 +7,6 @@ import java.util.Map;
 
 class ExchangeRateProvider {
     private final Map<String, Double> ratesToUsd;
-    // Open-access endpoint hosted by er-api.com (No registration key required)
     private static final String API_URL = "https://open.er-api.com/v6/latest/USD";
 
     public ExchangeRateProvider() {
@@ -17,7 +16,6 @@ class ExchangeRateProvider {
 
     private void fetchLiveRates() {
         try {
-            // Initialize a modern Java HTTP Client
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL))
